@@ -1,5 +1,7 @@
 import React from 'react';
 
+import InputSearch from '../../components/InputSearch';
+
 import * as S from './styles';
 
 const CATEGORIES = ['All', 'Popular', 'Top Rated', 'Featured', 'Luxury'];
@@ -13,6 +15,10 @@ const Home = () => {
         </S.Title>
         <S.UserIcon />
       </S.Header>
+
+      <S.InputContainer>
+        <InputSearch placeholder="Search" />
+      </S.InputContainer>
     </S.Container>
   );
 };

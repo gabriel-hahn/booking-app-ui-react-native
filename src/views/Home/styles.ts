@@ -13,18 +13,23 @@ export const Header = styled.View`
   justify-content: space-between;
 `;
 
+export const InputContainer = styled.View`
+  margin-top: ${RFValue(16)}px;
+`;
+
 export const Title = styled.Text`
   font-size: ${RFValue(24)}px;
   font-weight: 700;
 `;
 
 export const PlaceTitle = styled.Text`
-  color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const UserIcon = styled(FontAwesomeIcon).attrs({
   icon: faUser,
   size: 24,
+  color: '#908e8c',
 })`
   margin-top: ${RFValue(6)}px;
 `;
