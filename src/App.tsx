@@ -1,11 +1,21 @@
 import React from 'react';
-import {SafeAreaView, StatusBar, Text} from 'react-native';
+import { SafeAreaView, StatusBar } from 'react-native';
+import { ThemeProvider } from 'styled-components/native';
+
+import theme from './styles/theme';
+import Home from './views/Home';
 
 const App = () => {
   return (
-    <SafeAreaView style={{flex: 1, alignItems: 'center',justifyContent: 'center'}}>
-      <StatusBar barStyle="dark-content" />
-      <Text>Start Text</Text>
+    <SafeAreaView>
+      <StatusBar
+        barStyle="dark-content"
+        translucent
+        backgroundColor="transparent"
+      />
+      <ThemeProvider theme={theme}>
+        <Home />
+      </ThemeProvider>
     </SafeAreaView>
   );
 };
