@@ -11,7 +11,7 @@ const Home = () => {
         <S.Title>
           Find your hotel {'\n'}in <S.PlaceTitle>Paris</S.PlaceTitle>
         </S.Title>
-        {/* <S.UserIcon /> */}
+        <S.UserIcon />
       </S.Header>
     </S.Container>
   );

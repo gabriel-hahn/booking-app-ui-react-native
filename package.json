@@ -10,9 +10,13 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-native-fontawesome": "^0.2.7",
     "react": "17.0.2",
     "react-native": "0.65.1",
     "react-native-responsive-fontsize": "^0.5.1",
+    "react-native-svg": "^12.1.1",
     "styled-components": "^5.3.1"
   },
   "devDependencies": {
