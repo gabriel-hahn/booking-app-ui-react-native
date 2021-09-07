@@ -8,6 +8,10 @@ export const Container = styled.View`
   margin-horizontal: ${RFValue(20)}px;
 `;
 
+export const CategoriesListContainer = styled.View`
+  margin-top: ${RFValue(16)}px;
+`;
+
 export const Header = styled.View`
   flex-direction: row;
   justify-content: space-between;

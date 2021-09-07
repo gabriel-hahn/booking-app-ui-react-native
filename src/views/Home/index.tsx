@@ -1,12 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+import CategoriesList from '../../components/CategoriesList';
 import InputSearch from '../../components/InputSearch';
 
+import { Category } from '../../types';
 import * as S from './styles';
 
-const CATEGORIES = ['All', 'Popular', 'Top Rated', 'Featured', 'Luxury'];
+const CATEGORIES: Category[] = [
+  {
+    description: 'All Hotels',
+    key: 'ALL',
+  },
+  {
+    description: 'Popular',
+    key: 'POPULAR',
+  },
+  {
+    description: 'Top Rated',
+    key: 'TOP_RATED',
+  },
+  {
+    description: 'Featured',
+    key: 'FEATURED',
+  },
+  {
+    description: 'Luxury',
+    key: 'LUXURY',
+  },
+];
 
 const Home = () => {
+  const [selectedCategory, setSelectedCategory] = useState<Category>(
+    CATEGORIES[0],
+  );
+
+  const handleCategoryClick = (categoryKey: string) => {
+    const categoryClicked = CATEGORIES.find(
+      category => category.key === categoryKey,
+    ) as Category;
+
+    setSelectedCategory(categoryClicked);
+  };
+
   return (
     <S.Container>
       <S.Header>
@@ -19,6 +54,17 @@ const Home = () => {
       <S.InputContainer>
         <InputSearch placeholder="Search" />
       </S.InputContainer>
+
+      <S.CategoriesListContainer>
+        <CategoriesList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          hitSlop={{ bottom: 5, left: 5, right: 5, top: 5 }}
+          categories={CATEGORIES}
+          onSelect={handleCategoryClick}
+          selectedCategory={selectedCategory}
+        />
+      </S.CategoriesListContainer>
     </S.Container>
   );
 };
