@@ -4,7 +4,7 @@ const hotels = [
     name: 'Silver Hotel & SPA',
     location: 'Green street,Central district',
     price: 120,
-    image: require('../assets/hotel1.jpg'),
+    image: require('../assets/hotel1.jpeg'),
     details:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa placerat duis ultricies lacus sed. Justo laoreet sit amet cursus sit',
   },
@@ -13,7 +13,7 @@ const hotels = [
     name: 'Bring Hotel',
     location: 'Yuki street',
     price: 70,
-    image: require('../assets/hotel2.jpg'),
+    image: require('../assets/hotel2.jpeg'),
     details:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa placerat duis ultricies lacus sed. Justo laoreet sit amet cursus sit',
   },
@@ -22,7 +22,7 @@ const hotels = [
     name: 'Aluna Hotel',
     location: 'Almond street',
     price: 90,
-    image: require('../assets/hotel3.jpg'),
+    image: require('../assets/hotel3.jpeg'),
     details:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa placerat duis ultricies lacus sed. Justo laoreet sit amet cursus sit',
   },
@@ -31,7 +31,7 @@ const hotels = [
     name: 'Green Hotel',
     location: 'Main street',
     price: 100,
-    image: require('../assets/hotel4.jpg'),
+    image: require('../assets/hotel4.jpeg'),
     details:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa placerat duis ultricies lacus sed. Justo laoreet sit amet cursus sit',
   },
