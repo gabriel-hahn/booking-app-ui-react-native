@@ -4,12 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 export const Container = styled.View`
-  margin-top: ${RFValue(16)}px;
+  margin-top: ${RFValue(24)}px;
   margin-horizontal: ${RFValue(20)}px;
 `;
 
 export const CategoriesListContainer = styled.View`
-  margin-top: ${RFValue(16)}px;
+  margin-top: ${RFValue(24)}px;
+`;
+
+export const HotelCardListContainer = styled.View`
+  margin-top: ${RFValue(24)}px;
 `;
 
 export const Header = styled.View`

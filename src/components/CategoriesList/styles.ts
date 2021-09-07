@@ -2,7 +2,6 @@ import Animated from 'react-native-reanimated';
 import styled, { css } from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { RectButton } from 'react-native-gesture-handler';
-
 interface ICategoryOptionProps {
   isSelected: boolean;
 }
@@ -33,7 +32,7 @@ export const CategorySelectionMark = styled(Animated.View)`
 `;
 
 export const CategoryOption = styled(RectButton).attrs({
-  activeOpacity: 0.05,
+  activeOpacity: 0.02,
 })`
   margin-right: ${RFValue(16)}px;
 `;
