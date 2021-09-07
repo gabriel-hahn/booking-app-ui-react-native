@@ -1,11 +1,15 @@
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 
 export const Container = styled.ImageBackground`
-  border-radius: ${({ theme }) => theme.border.radius}px;
-  height: ${RFPercentage(35)}px;
-  width: ${RFPercentage(30)}px;
-  justify-content: space-between;
+  ${({ theme }) => css`
+    position: relative;
+    height: ${RFPercentage(40)}px;
+    width: ${RFPercentage(30)}px;
+    margin-right: ${RFValue(24)}px;
+    border-radius: ${theme.border.rounded}px;
+    overflow: hidden;
+  `}
 `;
 
 export const Name = styled.Text`
@@ -15,12 +19,41 @@ export const Name = styled.Text`
 
 export const Location = styled.Text`
   color: ${({ theme }) => theme.colors.grey};
+  font-size: ${RFValue(11)}px;
+  margin-top: 2px;
 `;
 
-export const PriceContainer = styled.View``;
+export const PriceContainer = styled.View`
+  ${({ theme }) => css`
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: ${RFPercentage(8)}px;
+    width: ${RFPercentage(12)}px;
+    background-color: ${theme.colors.primary};
+    border-bottom-left-radius: ${theme.border.rounded}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `}
+`;
 
-export const Price = styled.Text``;
+export const Price = styled.Text`
+  font-size: ${RFValue(19)}px;
+  font-weight: 800;
+  color: ${({ theme }) => theme.colors.white};
+`;
 
 export const DetailsContainer = styled.View`
-  justify-content: center;
+  ${({ theme }) => css`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: ${theme.colors.white};
+    height: ${RFPercentage(12)}px;
+    border-top-left-radius: ${theme.border.rounded}px;
+    border-top-right-radius: ${theme.border.rounded}px;
+    width: 100%;
+    padding: ${RFValue(16)}px;
+  `}
 `;

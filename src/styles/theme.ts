@@ -10,5 +10,6 @@ export default {
   },
   border: {
     radius: 8,
+    rounded: 20,
   },
 };
