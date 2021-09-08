@@ -14,6 +14,7 @@ export const CategoriesListContainer = styled.View`
 
 export const HotelCardListContainer = styled.View`
   margin-top: ${RFValue(24)}px;
+  height: 100%;
 `;
 
 export const Header = styled.View`

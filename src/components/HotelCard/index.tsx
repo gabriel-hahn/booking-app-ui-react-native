@@ -25,7 +25,7 @@ const HotelCard = ({ hotel, itemIndex, scrollX }: IHotelCardProps) => {
 
   const cardStyle = useAnimatedStyle(() => {
     return {
-      opacity: interpolate(scrollX.value, inputRange, [0.7, 1, 0.7]),
+      opacity: interpolate(scrollX.value, inputRange, [0.5, 1, 0.5]),
       transform: [
         {
           scale: interpolate(scrollX.value, inputRange, [0.8, 1, 0.8]),
@@ -35,7 +35,7 @@ const HotelCard = ({ hotel, itemIndex, scrollX }: IHotelCardProps) => {
   });
 
   return (
-    <Animated.View style={cardStyle}>
+    <S.AnimatedContainer style={cardStyle}>
       <S.Container source={hotel.image} resizeMode="cover">
         <S.PriceContainer>
           <S.Price>$ {hotel.price}</S.Price>
@@ -46,7 +46,7 @@ const HotelCard = ({ hotel, itemIndex, scrollX }: IHotelCardProps) => {
           <S.Location>{hotel.location}</S.Location>
         </S.DetailsContainer>
       </S.Container>
-    </Animated.View>
+    </S.AnimatedContainer>
   );
 };
 

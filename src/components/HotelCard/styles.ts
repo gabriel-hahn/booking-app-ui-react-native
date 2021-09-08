@@ -1,5 +1,12 @@
+import Animated from 'react-native-reanimated';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import styled, { css } from 'styled-components/native';
+
+export const AnimatedContainer = styled(Animated.View)`
+  ${({ theme }) => css`
+    box-shadow: 2px 1px 10px ${theme.colors.grey};
+  `}
+`;
 
 export const Container = styled.ImageBackground`
   ${({ theme }) => css`
