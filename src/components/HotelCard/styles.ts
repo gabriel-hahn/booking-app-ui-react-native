@@ -6,7 +6,6 @@ export const Container = styled.ImageBackground`
     position: relative;
     height: ${RFPercentage(40)}px;
     width: ${RFPercentage(30)}px;
-    margin-right: ${RFValue(24)}px;
     border-radius: ${theme.border.rounded}px;
     overflow: hidden;
   `}
