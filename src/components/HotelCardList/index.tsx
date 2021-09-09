@@ -12,7 +12,7 @@ import HotelCard from '../HotelCard';
 
 import * as S from './styles';
 
-const CARD_WIDTH_OFFSET = RFPercentage(30);
+const CARD_WIDTH_OFFSET = RFPercentage(32);
 interface IHotelCardListProps extends ScrollViewProps {
   hotelList: Hotel[];
 }

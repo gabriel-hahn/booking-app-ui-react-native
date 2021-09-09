@@ -1,20 +1,23 @@
 import Animated from 'react-native-reanimated';
-import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import styled, { css } from 'styled-components/native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faBookmark } from '@fortawesome/free-regular-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 
 export const AnimatedContainer = styled(Animated.View)`
   ${({ theme }) => css`
-    box-shadow: 12px 12px 15px ${theme.colors.grey};
+    box-shadow: 5px 5px 20px ${theme.colors.shadow};
   `}
 `;
 
 export const Container = styled.ImageBackground`
   ${({ theme }) => css`
-    position: relative;
-    height: ${RFPercentage(40)}px;
-    width: ${RFPercentage(30)}px;
+    height: ${RFPercentage(42)}px;
+    width: ${RFPercentage(32)}px;
     border-radius: ${theme.border.rounded}px;
     overflow: hidden;
+    justify-content: space-between;
   `}
 `;
 
@@ -31,9 +34,6 @@ export const Location = styled.Text`
 
 export const PriceContainer = styled.View`
   ${({ theme }) => css`
-    position: absolute;
-    top: 0;
-    right: 0;
     height: ${RFPercentage(8)}px;
     width: ${RFPercentage(12)}px;
     background-color: ${theme.colors.primary};
@@ -41,6 +41,7 @@ export const PriceContainer = styled.View`
     display: flex;
     align-items: center;
     justify-content: center;
+    align-self: flex-end;
   `}
 `;
 
@@ -52,14 +53,50 @@ export const Price = styled.Text`
 
 export const DetailsContainer = styled.View`
   ${({ theme }) => css`
-    position: absolute;
-    bottom: 0;
-    left: 0;
     background-color: ${theme.colors.white};
-    height: ${RFPercentage(12)}px;
+    height: ${RFPercentage(14)}px;
     border-top-left-radius: ${theme.border.rounded}px;
     border-top-right-radius: ${theme.border.rounded}px;
     width: 100%;
     padding: ${RFValue(16)}px;
+    justify-content: space-between;
   `}
+`;
+
+export const DetailsContainerTitle = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const BookmarkIcon = styled(FontAwesomeIcon).attrs({
+  icon: faBookmark,
+  size: 20,
+  color: '#52c0b4',
+})``;
+
+export const RatingContainer = styled.View`
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const RatingText = styled.Text`
+  font-weight: 600;
+  font-size: ${RFValue(12)}px;
+  margin-left: ${RFValue(8)}px;
+`;
+
+export const RatingIcon = styled(FontAwesomeIcon).attrs({
+  icon: faStar,
+  size: 12,
+})``;
+
+export const Review = styled.Text`
+  color: ${({ theme }) => theme.colors.grey};
+  font-size: ${RFValue(11)}px;
+`;
+
+export const ClientReviewsContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
 `;

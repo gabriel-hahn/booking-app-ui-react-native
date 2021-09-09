@@ -16,7 +16,7 @@ export const CategoriesListContainer = styled.View`
 `;
 
 export const HotelCardListContainer = styled.View`
-  margin-top: ${RFValue(16)}px;
+  margin-top: ${RFValue(8)}px;
   margin-horizontal: ${RFValue(-20)}px;
   height: 100%;
 `;

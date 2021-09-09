@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { View } from 'react-native';
 import Animated, {
   interpolate,
   useAnimatedStyle,
 } from 'react-native-reanimated';
 import { RFPercentage } from 'react-native-responsive-fontsize';
+import { useTheme } from 'styled-components';
 
 import { Hotel } from '../../types';
 import * as S from './styles';
@@ -14,9 +16,11 @@ interface IHotelCardProps {
   scrollX: Animated.SharedValue<number>;
 }
 
-const CARD_WIDTH_OFFSET = RFPercentage(30);
+const CARD_WIDTH_OFFSET = RFPercentage(32);
 
 const HotelCard = ({ hotel, itemIndex, scrollX }: IHotelCardProps) => {
+  const theme = useTheme();
+
   const inputRange = [
     (itemIndex - 1) * CARD_WIDTH_OFFSET,
     itemIndex * CARD_WIDTH_OFFSET,
@@ -34,6 +38,11 @@ const HotelCard = ({ hotel, itemIndex, scrollX }: IHotelCardProps) => {
     };
   });
 
+  const ratingFormatted = useMemo(
+    () => Array(5).fill(false).fill(true, 0, hotel.rating),
+    [hotel.rating],
+  );
+
   return (
     <S.AnimatedContainer style={cardStyle}>
       <S.Container source={hotel.image} resizeMode="cover">
@@ -42,8 +51,25 @@ const HotelCard = ({ hotel, itemIndex, scrollX }: IHotelCardProps) => {
         </S.PriceContainer>
 
         <S.DetailsContainer>
-          <S.Name>{hotel.name}</S.Name>
-          <S.Location>{hotel.location}</S.Location>
+          <S.DetailsContainerTitle>
+            <View>
+              <S.Name>{hotel.name}</S.Name>
+              <S.Location>{hotel.location}</S.Location>
+            </View>
+            <S.BookmarkIcon />
+          </S.DetailsContainerTitle>
+          <S.ClientReviewsContainer>
+            <S.RatingContainer>
+              {ratingFormatted.map((ratingValue, ratingIndex) => (
+                <S.RatingIcon
+                  key={ratingIndex}
+                  color={ratingValue ? theme.colors.orange : theme.colors.light}
+                />
+              ))}
+              <S.RatingText>{hotel.rating}.0</S.RatingText>
+            </S.RatingContainer>
+            <S.Review>{hotel.reviews} reviews</S.Review>
+          </S.ClientReviewsContainer>
         </S.DetailsContainer>
       </S.Container>
     </S.AnimatedContainer>
