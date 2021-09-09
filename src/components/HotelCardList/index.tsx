@@ -29,6 +29,7 @@ const HotelCardList = ({ hotelList, ...rest }: IHotelCardListProps) => {
       scrollEventThrottle={16}
       snapToInterval={CARD_WIDTH_OFFSET}
       disableScrollViewPanResponder={false}
+      disableIntervalMomentum
       onScroll={handleScroll}
       {...rest}>
       {hotelList.map((hotel, itemIndex) => (

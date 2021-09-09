@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components/native';
 
 export const AnimatedContainer = styled(Animated.View)`
   ${({ theme }) => css`
-    box-shadow: 2px 1px 10px ${theme.colors.grey};
+    box-shadow: 12px 12px 15px ${theme.colors.grey};
   `}
 `;
 
