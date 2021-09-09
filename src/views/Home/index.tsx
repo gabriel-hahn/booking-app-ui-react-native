@@ -77,6 +77,10 @@ const Home = () => {
           hotelList={hotelMocks}
         />
       </S.HotelCardListContainer>
+
+      <S.TopHotelListContainer>
+        <S.TopHotelTitle>Top hotels</S.TopHotelTitle>
+      </S.TopHotelListContainer>
     </S.Container>
   );
 };

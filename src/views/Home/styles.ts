@@ -16,9 +16,12 @@ export const CategoriesListContainer = styled.View`
 `;
 
 export const HotelCardListContainer = styled.View`
-  margin-top: ${RFValue(8)}px;
+  margin-vertical: ${RFValue(8)}px;
   margin-horizontal: ${RFValue(-20)}px;
-  height: 100%;
+`;
+
+export const TopHotelListContainer = styled.View`
+  margin-top: ${RFValue(8)}px;
 `;
 
 export const Header = styled.View`
@@ -37,6 +40,12 @@ export const Title = styled.Text`
 
 export const PlaceTitle = styled.Text`
   color: ${({ theme }) => theme.colors.primary};
+`;
+
+export const TopHotelTitle = styled.Text`
+  color: ${({ theme }) => theme.colors.grey};
+  font-weight: 700;
+  font-size: ${RFValue(14)}px;
 `;
 
 export const UserIcon = styled(FontAwesomeIcon).attrs({
