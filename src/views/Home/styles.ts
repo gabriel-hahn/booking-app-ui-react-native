@@ -7,8 +7,10 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 const currentStatusBarHeight = StatusBar.currentHeight || 0;
 
 export const Container = styled.View`
-  margin-top: ${currentStatusBarHeight + RFValue(24)}px;
-  margin-horizontal: ${RFValue(20)}px;
+  flex: 1;
+  padding-horizontal: ${RFValue(20)}px;
+  padding-top: ${currentStatusBarHeight + RFValue(24)}px;
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 export const CategoriesListContainer = styled.View`
