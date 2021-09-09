@@ -1,10 +1,13 @@
+import { StatusBar } from 'react-native';
 import styled from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
+const currentStatusBarHeight = StatusBar.currentHeight || 0;
+
 export const Container = styled.View`
-  margin-top: ${RFValue(24)}px;
+  margin-top: ${currentStatusBarHeight + RFValue(24)}px;
   margin-horizontal: ${RFValue(20)}px;
 `;
 
