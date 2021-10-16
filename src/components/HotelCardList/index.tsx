@@ -12,6 +12,7 @@ import HotelCard from '../HotelCard';
 
 import * as S from './styles';
 
+const LAST_CARD_PADDING = 100;
 const CARD_WIDTH_OFFSET = RFPercentage(32);
 interface IHotelCardListProps extends ScrollViewProps {
   hotelList: Hotel[];
@@ -30,6 +31,9 @@ const HotelCardList = ({ hotelList, ...rest }: IHotelCardListProps) => {
       snapToInterval={CARD_WIDTH_OFFSET}
       disableScrollViewPanResponder={false}
       disableIntervalMomentum
+      contentContainerStyle={{
+        paddingRight: CARD_WIDTH_OFFSET - LAST_CARD_PADDING,
+      }}
       onScroll={handleScroll}
       {...rest}>
       {hotelList.map((hotel, itemIndex) => (
