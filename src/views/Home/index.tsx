@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import CategoriesList from '../../components/CategoriesList';
 import InputSearch from '../../components/InputSearch';
 import HotelCardList from '../../components/HotelCardList';
+import TopHotelList from '../../components/TopHotelsList';
 
 import { Category } from '../../types';
 import * as S from './styles';
@@ -80,6 +81,7 @@ const Home = () => {
 
       <S.TopHotelListContainer>
         <S.TopHotelTitle>Top hotels</S.TopHotelTitle>
+        <TopHotelList />
       </S.TopHotelListContainer>
     </S.Container>
   );

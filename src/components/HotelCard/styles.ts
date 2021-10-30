@@ -13,8 +13,8 @@ export const AnimatedContainer = styled(Animated.View)`
 
 export const Container = styled.ImageBackground`
   ${({ theme }) => css`
-    height: ${RFPercentage(42)}px;
-    width: ${RFPercentage(32)}px;
+    height: ${RFPercentage(40)}px;
+    width: ${RFPercentage(30)}px;
     border-radius: ${theme.border.rounded}px;
     overflow: hidden;
     justify-content: space-between;
