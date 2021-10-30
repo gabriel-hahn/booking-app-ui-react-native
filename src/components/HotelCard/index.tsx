@@ -66,7 +66,7 @@ const HotelCard = ({ hotel, itemIndex, scrollX }: IHotelCardProps) => {
                   color={ratingValue ? theme.colors.orange : theme.colors.light}
                 />
               ))}
-              <S.RatingText>{hotel.rating}.0</S.RatingText>
+              <S.RatingText>{hotel.rating}</S.RatingText>
             </S.RatingContainer>
             <S.Review>{hotel.reviews} reviews</S.Review>
           </S.ClientReviewsContainer>
