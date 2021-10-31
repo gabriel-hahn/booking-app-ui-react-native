@@ -22,7 +22,9 @@ const HotelDetails = () => {
 
   return (
     <S.Container>
-      <S.BackgroundImage source={hotel.image} resizeMode="cover">
+      <S.BackgroundImage
+        source={hotel.imageGradient || hotel.image}
+        resizeMode="cover">
         <S.Header>
           <TouchableOpacity activeOpacity={0.9} onPress={handleNavigateBack}>
             <S.BackIcon />

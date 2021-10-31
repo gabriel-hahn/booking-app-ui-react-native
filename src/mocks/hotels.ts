@@ -1,4 +1,6 @@
-const hotels = [
+import { Hotel } from '../types';
+
+const hotels: Hotel[] = [
   {
     id: '1',
     name: 'Silver SPA',
@@ -7,6 +9,7 @@ const hotels = [
     rating: '4.9',
     reviews: 325,
     image: require('../assets/hotel1.jpeg'),
+    imageGradient: require('../assets/hotel1-gradient.jpeg'),
     details:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa placerat duis ultricies lacus sed. Justo laoreet sit amet cursus sit',
   },

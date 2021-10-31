@@ -10,8 +10,9 @@ export type Hotel = {
   name: string;
   location: string;
   price: number;
-  rating: number;
+  rating: string;
   reviews: number;
   image: ImageSourcePropType;
+  imageGradient?: ImageSourcePropType;
   details: string;
 };

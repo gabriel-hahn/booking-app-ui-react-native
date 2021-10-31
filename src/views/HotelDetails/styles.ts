@@ -36,20 +36,29 @@ export const ContentContainer = styled.View`
 export const Header = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  margin: ${RFValue(24)}px;
+  margin-top: ${RFValue(40)}px;
+  margin-horizontal: ${RFValue(24)}px;
 `;
 
 export const BookmarkIcon = styled(FontAwesomeIcon).attrs({
   icon: faBookmark,
   size: 24,
   color: '#FFF',
-})``;
+})`
+  ${({ theme }) => css`
+    box-shadow: 10px 10px 20px ${theme.colors.dark};
+  `}
+`;
 
 export const BackIcon = styled(FontAwesomeIcon).attrs({
   icon: faArrowLeft,
   size: 24,
   color: '#FFF',
-})``;
+})`
+  ${({ theme }) => css`
+    box-shadow: 10px 10px 20px ${theme.colors.dark};
+  `}
+`;
 
 export const LocationIconContainer = styled.View`
   ${({ theme }) => css`
