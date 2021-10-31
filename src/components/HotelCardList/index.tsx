@@ -15,7 +15,7 @@ import { HomeScreeNavigationProp } from '../../routes/types';
 import * as S from './styles';
 
 const LAST_CARD_PADDING = 100;
-const CARD_WIDTH_OFFSET = RFPercentage(32);
+const CARD_WIDTH_OFFSET = RFPercentage(30);
 interface IHotelCardListProps extends ScrollViewProps {
   hotelList: Hotel[];
 }
