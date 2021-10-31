@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import Animated, {
   interpolate,
   useAnimatedStyle,
@@ -14,11 +15,17 @@ interface IHotelCardProps {
   hotel: Hotel;
   itemIndex: number;
   scrollX: Animated.SharedValue<number>;
+  handleClick: (hotel: Hotel) => void;
 }
 
 const CARD_WIDTH_OFFSET = RFPercentage(32);
 
-const HotelCard = ({ hotel, itemIndex, scrollX }: IHotelCardProps) => {
+const HotelCard = ({
+  hotel,
+  itemIndex,
+  handleClick,
+  scrollX,
+}: IHotelCardProps) => {
   const theme = useTheme();
 
   const inputRange = [
@@ -44,35 +51,39 @@ const HotelCard = ({ hotel, itemIndex, scrollX }: IHotelCardProps) => {
   );
 
   return (
-    <S.AnimatedContainer style={cardStyle}>
-      <S.Container source={hotel.image} resizeMode="cover">
-        <S.PriceContainer>
-          <S.Price>$ {hotel.price}</S.Price>
-        </S.PriceContainer>
+    <TouchableOpacity activeOpacity={0.9} onPress={() => handleClick(hotel)}>
+      <S.AnimatedContainer style={cardStyle}>
+        <S.Container source={hotel.image} resizeMode="cover">
+          <S.PriceContainer>
+            <S.Price>$ {hotel.price}</S.Price>
+          </S.PriceContainer>
 
-        <S.DetailsContainer>
-          <S.DetailsContainerTitle>
-            <View>
-              <S.Name>{hotel.name}</S.Name>
-              <S.Location>{hotel.location}</S.Location>
-            </View>
-            <S.BookmarkIcon />
-          </S.DetailsContainerTitle>
-          <S.ClientReviewsContainer>
-            <S.RatingContainer>
-              {ratingFormatted.map((ratingValue, ratingIndex) => (
-                <S.RatingIcon
-                  key={ratingIndex}
-                  color={ratingValue ? theme.colors.orange : theme.colors.light}
-                />
-              ))}
-              <S.RatingText>{hotel.rating}</S.RatingText>
-            </S.RatingContainer>
-            <S.Review>{hotel.reviews} reviews</S.Review>
-          </S.ClientReviewsContainer>
-        </S.DetailsContainer>
-      </S.Container>
-    </S.AnimatedContainer>
+          <S.DetailsContainer>
+            <S.DetailsContainerTitle>
+              <View>
+                <S.Name>{hotel.name}</S.Name>
+                <S.Location>{hotel.location}</S.Location>
+              </View>
+              <S.BookmarkIcon />
+            </S.DetailsContainerTitle>
+            <S.ClientReviewsContainer>
+              <S.RatingContainer>
+                {ratingFormatted.map((ratingValue, ratingIndex) => (
+                  <S.RatingIcon
+                    key={ratingIndex}
+                    color={
+                      ratingValue ? theme.colors.orange : theme.colors.light
+                    }
+                  />
+                ))}
+                <S.RatingText>{hotel.rating}</S.RatingText>
+              </S.RatingContainer>
+              <S.Review>{hotel.reviews} reviews</S.Review>
+            </S.ClientReviewsContainer>
+          </S.DetailsContainer>
+        </S.Container>
+      </S.AnimatedContainer>
+    </TouchableOpacity>
   );
 };
 

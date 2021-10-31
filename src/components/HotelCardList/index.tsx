@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   NativeScrollEvent,
   NativeSyntheticEvent,
@@ -6,9 +6,11 @@ import {
 } from 'react-native';
 import { useSharedValue } from 'react-native-reanimated';
 import { RFPercentage } from 'react-native-responsive-fontsize';
+import { useNavigation } from '@react-navigation/native';
 
-import { Hotel } from '../../types';
 import HotelCard from '../HotelCard';
+import { Hotel } from '../../types';
+import { HomeScreeNavigationProp } from '../../routes/types';
 
 import * as S from './styles';
 
@@ -20,10 +22,18 @@ interface IHotelCardListProps extends ScrollViewProps {
 
 const HotelCardList = ({ hotelList, ...rest }: IHotelCardListProps) => {
   const scrollX = useSharedValue(0);
+  const navigate = useNavigation<HomeScreeNavigationProp>();
 
   const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     scrollX.value = event.nativeEvent.contentOffset.x;
   };
+
+  const handleHotelClick = useCallback(
+    hotel => {
+      navigate.navigate('HotelDetails', { hotel });
+    },
+    [navigate],
+  );
 
   return (
     <S.Container
@@ -42,6 +52,7 @@ const HotelCardList = ({ hotelList, ...rest }: IHotelCardListProps) => {
           hotel={hotel}
           itemIndex={itemIndex}
           scrollX={scrollX}
+          handleClick={handleHotelClick}
         />
       ))}
     </S.Container>

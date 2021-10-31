@@ -2,14 +2,18 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from '../views/Home';
+import HotelDetails from '../views/HotelDetails';
+import { StackParamList } from './types';
 
-const { Navigator, Screen } = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<StackParamList>();
 
 const StackRoutes = () => (
-  <Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
-    <Screen name="Home" component={Home} />
-    {/* <Screen name="Details" component={HomeDetails} /> */}
-  </Navigator>
+  <Stack.Navigator
+    initialRouteName="Home"
+    screenOptions={{ headerShown: false }}>
+    <Stack.Screen name="Home" component={Home} />
+    <Stack.Screen name="HotelDetails" component={HotelDetails} />
+  </Stack.Navigator>
 );
 
 export default StackRoutes;
