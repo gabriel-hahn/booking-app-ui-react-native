@@ -46,7 +46,10 @@ const HotelCard = ({
   });
 
   const ratingFormatted = useMemo(
-    () => Array(5).fill(false).fill(true, 0, hotel.rating),
+    () =>
+      Array(5)
+        .fill(false)
+        .fill(true, 0, +hotel.rating),
     [hotel.rating],
   );
 

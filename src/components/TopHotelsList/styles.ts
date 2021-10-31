@@ -24,10 +24,16 @@ export const CardContainer = styled.ImageBackground`
 `;
 
 export const Rating = styled.View`
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  padding: ${RFValue(8)}px;
+  ${({ theme }) => css`
+    width: 57%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    align-self: flex-end;
+    padding: ${RFValue(8)}px;
+    border-bottom-left-radius: ${theme.border.rounded}px;
+    background-color: rgba(0, 0, 0, 0.3);
+  `}
 `;
 
 export const RatingIcon = styled(FontAwesomeIcon).attrs({
