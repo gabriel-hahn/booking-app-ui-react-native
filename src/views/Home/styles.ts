@@ -8,7 +8,7 @@ const currentStatusBarHeight = StatusBar.currentHeight || 0;
 
 export const Container = styled.View`
   flex: 1;
-  padding-horizontal: ${RFValue(20)}px;
+  padding-horizontal: ${RFValue(24)}px;
   padding-top: ${currentStatusBarHeight + RFValue(24)}px;
   background-color: ${({ theme }) => theme.colors.white};
 `;

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Animated, {
@@ -6,11 +6,12 @@ import Animated, {
   useAnimatedStyle,
 } from 'react-native-reanimated';
 import { RFPercentage } from 'react-native-responsive-fontsize';
-import { useTheme } from 'styled-components';
+
+import Rating from '../Rating';
 
 import { Hotel } from '../../types';
-import * as S from './styles';
 
+import * as S from './styles';
 interface IHotelCardProps {
   hotel: Hotel;
   itemIndex: number;
@@ -26,8 +27,6 @@ const HotelCard = ({
   handleClick,
   scrollX,
 }: IHotelCardProps) => {
-  const theme = useTheme();
-
   const inputRange = [
     (itemIndex - 1) * CARD_WIDTH_OFFSET,
     itemIndex * CARD_WIDTH_OFFSET,
@@ -45,16 +44,8 @@ const HotelCard = ({
     };
   });
 
-  const ratingFormatted = useMemo(
-    () =>
-      Array(5)
-        .fill(false)
-        .fill(true, 0, +hotel.rating),
-    [hotel.rating],
-  );
-
   return (
-    <TouchableOpacity activeOpacity={0.9} onPress={() => handleClick(hotel)}>
+    <TouchableOpacity activeOpacity={0.8} onPress={() => handleClick(hotel)}>
       <S.AnimatedContainer style={cardStyle}>
         <S.Container source={hotel.image} resizeMode="cover">
           <S.PriceContainer>
@@ -69,20 +60,7 @@ const HotelCard = ({
               </View>
               <S.BookmarkIcon />
             </S.DetailsContainerTitle>
-            <S.ClientReviewsContainer>
-              <S.RatingContainer>
-                {ratingFormatted.map((ratingValue, ratingIndex) => (
-                  <S.RatingIcon
-                    key={ratingIndex}
-                    color={
-                      ratingValue ? theme.colors.orange : theme.colors.light
-                    }
-                  />
-                ))}
-                <S.RatingText>{hotel.rating}</S.RatingText>
-              </S.RatingContainer>
-              <S.Review>{hotel.reviews} reviews</S.Review>
-            </S.ClientReviewsContainer>
+            <Rating reviews={hotel.reviews} rating={hotel.rating} />
           </S.DetailsContainer>
         </S.Container>
       </S.AnimatedContainer>

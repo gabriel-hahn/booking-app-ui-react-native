@@ -6,7 +6,7 @@ export default {
     secondary: '#e0f4f1',
     shadow: '#e6e6e6',
     light: '#f5f5f5',
-    grey: '#908e8c',
+    grey: '#9c9c9c',
     orange: '#f5a623',
   },
   border: {

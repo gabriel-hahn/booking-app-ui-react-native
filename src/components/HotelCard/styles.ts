@@ -2,7 +2,6 @@ import Animated from 'react-native-reanimated';
 import styled, { css } from 'styled-components/native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faBookmark } from '@fortawesome/free-regular-svg-icons';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 
 export const AnimatedContainer = styled(Animated.View)`
@@ -73,30 +72,3 @@ export const BookmarkIcon = styled(FontAwesomeIcon).attrs({
   size: 20,
   color: '#52c0b4',
 })``;
-
-export const RatingContainer = styled.View`
-  height: 100%;
-  flex-direction: row;
-  align-items: center;
-`;
-
-export const RatingText = styled.Text`
-  font-weight: 600;
-  font-size: ${RFValue(12)}px;
-  margin-left: ${RFValue(8)}px;
-`;
-
-export const RatingIcon = styled(FontAwesomeIcon).attrs({
-  icon: faStar,
-  size: 12,
-})``;
-
-export const Review = styled.Text`
-  color: ${({ theme }) => theme.colors.grey};
-  font-size: ${RFValue(11)}px;
-`;
-
-export const ClientReviewsContainer = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-`;
