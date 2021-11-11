@@ -1,4 +1,5 @@
 import React from 'react';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
 import {
@@ -7,7 +8,7 @@ import {
 } from '../../routes/types';
 
 import * as S from './styles';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import Rating from '../../components/Rating';
 
 const HotelDetails = () => {
   const {
@@ -26,7 +27,7 @@ const HotelDetails = () => {
         source={hotel.imageGradient || hotel.image}
         resizeMode="cover">
         <S.Header>
-          <TouchableOpacity activeOpacity={0.9} onPress={handleNavigateBack}>
+          <TouchableOpacity activeOpacity={0.8} onPress={handleNavigateBack}>
             <S.BackIcon />
           </TouchableOpacity>
           <S.BookmarkIcon />
@@ -37,7 +38,26 @@ const HotelDetails = () => {
         <S.LocationIcon />
       </S.LocationIconContainer>
 
-      <S.ContentContainer></S.ContentContainer>
+      <S.ContentContainer>
+        <S.Title>{hotel.name}</S.Title>
+        <S.LocationName>{hotel.location}</S.LocationName>
+        <Rating rating={hotel.rating} reviews={hotel.reviews} />
+
+        <S.Description>{hotel.details}</S.Description>
+      </S.ContentContainer>
+
+      <S.PricingContainer>
+        <S.PricingTitle>Price per night</S.PricingTitle>
+        <S.PricingBackground>
+          <S.Pricing>
+            ${hotel.price} <S.PricingDetail>+ breakfest</S.PricingDetail>
+          </S.Pricing>
+        </S.PricingBackground>
+      </S.PricingContainer>
+
+      <S.BookButton>
+        <S.BookButtonText>Book now</S.BookButtonText>
+      </S.BookButton>
     </S.Container>
   );
 };
